@@ -15,6 +15,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
@@ -36,7 +37,7 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 
 	BufferedImage backgroundImage;
 	MediaPalace mp = new MediaPalace();
-
+	JFrame frame;
 	
 	
 	
@@ -51,7 +52,7 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	}
 
 	private void createUI() {
-		JFrame frame = new JFrame("The Magic Box contains many secrets...");
+		frame = new JFrame("The Magic Box contains many secrets...");
 		frame.add(this);
 		frame.addMouseListener(this);
 		setPreferredSize(new Dimension(backgroundImage.getWidth(), backgroundImage.getHeight()));
@@ -90,14 +91,18 @@ public class MagicBox extends JPanel implements Runnable, MouseListener {
 	System.out.println(e.getX()  +"    "+  e.getY());
 	
 	if (e.getX()> 165 && e.getY() > 844 && e.getX() < 839 && e.getY() < 897) {
-		mp.speak("TEST");
+		mp.speak("Hi");
+	}
+	if (e.getX() < 405 && e.getY() > 133 && e.getX() > 137 && e.getY() < 410) {
+		mp.speak("twist!");
+	}
+   if (e.getX() > 513  && e.getY() < 1022 && e.getX() < 989 && e.getY() > 884) {
+		JLabel label = mp.loadImageFromWithinProject("rack.jpg");
+		frame.add (label);
+		frame.pack();
 	}
 	
-//	if (e.getX() > 265 && e.getY() > 139 && e.getX() <  && e.getY()< ) {
-		//mp.speak("flush");
 	}
-	
-	//}
 		
 	@Override
 	public void mouseReleased(MouseEvent e) {
