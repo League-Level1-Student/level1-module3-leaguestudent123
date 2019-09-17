@@ -33,7 +33,7 @@ public String getTicketPrice() {
 			return "That will be $12 please.";
 		} else if (this.title.contains("Twilight")) {
 			return "This movie is so bad, we'll pay YOU to watch it!";
-		} else {
+		} else {           
 			return "Don't waste your money on this horrible rubbish.";
 		}
 	}
