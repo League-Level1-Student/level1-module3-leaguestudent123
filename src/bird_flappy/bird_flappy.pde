@@ -55,6 +55,7 @@ if(y>450){
  if(pipe<-20){
     upperpipeheight = (int) random(100, 400);
    pipe=width;
+   score=score+1;
  }
  fill(#FA00D1);
  text("score: " +score, 0,100);
@@ -62,7 +63,8 @@ if(y>450){
 else{
   
   background(0);
-  text("game over", 240, 250);
+  text("game over, better luck next time", 150, 250);
+ text("score:" +score,230,300);
 }
 }
 
@@ -81,7 +83,7 @@ else{
 void keyPressed(){
   
   if(key == ' '){
-    birdYVelocity= - 15;
+    birdYVelocity= - 12;
     
   }
   if(key=='r'){
