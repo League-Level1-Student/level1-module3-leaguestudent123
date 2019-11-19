@@ -1,5 +1,8 @@
 int frogx=100;
 int frogy=100;
+int carX=300;
+int carY=300;
+
 void setup() {
 
   size(500, 500);
@@ -10,11 +13,18 @@ void draw() {
 
   fill(#00FF1B);
   ellipse(frogx, frogy, 20, 20);
+
+
+  fill(#A09696);
+  rect(carX,carY,100,40);
+
+
 }
+
 void keyPressed() {
   if (key == 'w') {
     //Frog Y position goes up
-    frogy=frogy-20;
+    frogy=frogy-20; 
     if(frogy<=0){
       
       frogy=0;
@@ -33,17 +43,17 @@ void keyPressed() {
   {
     //Frog X position goes right
     frogx=frogx+20;
-    if(frogx<=0){
+    if(frogx>=width){
       
-      frogx=0;
+      frogx=width;
     }
   } else if (key == 'a')
   {
     //Frog X position goes left
     frogx=frogx-20;
-    if(frogx>=width){
+    if(frogx<=0){
       
-      frogx=width;
+      frogx=0;
     }
   }
 }
