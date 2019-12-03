@@ -17,6 +17,7 @@ class Car {
   {
     fill(0, 255, 0);
     rect(carX, carY, carSize, 50);
+    
   }
 }
 void setup() {
@@ -29,7 +30,7 @@ void setup() {
 
 
   size(500, 500);
-}
+}sssssss
 void draw() {
 
   background(#0046FF);
@@ -40,6 +41,10 @@ void draw() {
 
   fill(#A09696);
   rect(300, 300, 100, 40);
+
+
+
+
 }
 
 void keyPressed() {
