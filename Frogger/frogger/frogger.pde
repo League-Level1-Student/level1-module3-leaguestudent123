@@ -19,9 +19,18 @@ class Car {
     rect(carX, carY, carSize, 50);
     
   }
-}
+  void moveleft(){
+   carX-=carSpeed; 
+    if(carX<-carSize){
+      
+    carX=width;
+    }
+  } 
+  }
+  
+    Car honda = new Car(300, 300, 200, 3);
 void setup() {
-  Car honda = new Car(23, 43, 5, 3);
+
   println(honda.carX);
   println(honda.carY);
   println(honda.carSize);
@@ -30,7 +39,7 @@ void setup() {
 
 
   size(500, 500);
-}sssssss
+}
 void draw() {
 
   background(#0046FF);
@@ -39,8 +48,9 @@ void draw() {
   ellipse(frogx, frogy, 20, 20);
 
 
-  fill(#A09696);
-  rect(300, 300, 100, 40);
+ 
+  honda.display();
+  honda.moveleft();
 
 
 
