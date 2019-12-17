@@ -26,9 +26,19 @@ class Car {
     carX=width;
     }
   } 
-  }
   
+  
+   
+  void moveright(){
+   carX+=carSpeed; 
+    if(carX>width){
+      
+    carX=0;
+    }
+  } 
+}
     Car honda = new Car(300, 300, 200, 3);
+    Car newcar= new Car(100,100,200,3);
 void setup() {
 
   println(honda.carX);
@@ -52,8 +62,8 @@ void draw() {
   honda.display();
   honda.moveleft();
 
-
-
+newcar.display();
+newcar.moveright();
 
 }
 
