@@ -6,7 +6,10 @@ class Car {
   int carY;
   int carSize;
   int carSpeed;
-
+  int getX;
+  int getY;
+  int getSize;
+  boolean intersects;
   Car(int x, int y, int size, int speed) {
     this.carX = x;
     this.carY = y;
@@ -33,14 +36,19 @@ class Car {
    carX+=carSpeed; 
     if(carX>width){
       
-    carX=0;
+    carX=-carSize;
     }
   } 
 }
     Car honda = new Car(300, 300, 200, 3);
     Car newcar= new Car(100,100,200,3);
+    Car carz= new Car(200,200,200,3);
+    Car lambo=new Car (400,400,200,3);
 void setup() {
 
+
+  
+  
   println(honda.carX);
   println(honda.carY);
   println(honda.carSize);
@@ -49,6 +57,7 @@ void setup() {
 
 
   size(500, 500);
+  
 }
 void draw() {
 
@@ -61,10 +70,16 @@ void draw() {
  
   honda.display();
   honda.moveleft();
+  
 
 newcar.display();
 newcar.moveright();
 
+carz.display();
+carz.moveleft();
+
+lambo.display();
+lambo.moveright();
 }
 
 void keyPressed() {
@@ -100,4 +115,13 @@ void keyPressed() {
       frogx=0;
     }
   }
+}
+boolean intersects(Car car) {
+ if ((frogy > car.carY && frogy < car.carY+50) &&
+                (frogx > car.carX && frogx < car.carX+car.carSize)) {
+   return true;
+  }
+ else  {
+  return false;
+ }
 }
