@@ -9,7 +9,7 @@ class Car {
   int getX;
   int getY;
   int getSize;
-  boolean intersects=true;
+
   Car(int x, int y, int size, int speed) {
     this.carX = x;
     this.carY = y;
@@ -63,7 +63,9 @@ void draw() {
   fill(#00FF1B);
   ellipse(frogx, frogy, 20, 20);
 
-
+ 
+  
+  
  
   honda.display();
   honda.moveleft();
@@ -77,6 +79,11 @@ carz.moveleft();
 
 lambo.display();
 lambo.moveright();
+if(intersects(honda) || intersects(newcar) || intersects(carz) || intersects(lambo)){
+  frogx=100;
+frogy=100;
+}
+
 }
 
 void keyPressed() {
