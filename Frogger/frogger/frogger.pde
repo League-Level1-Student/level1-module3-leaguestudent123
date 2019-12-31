@@ -9,7 +9,7 @@ class Car {
   int getX;
   int getY;
   int getSize;
-  boolean intersects;
+  boolean intersects=true;
   Car(int x, int y, int size, int speed) {
     this.carX = x;
     this.carY = y;
@@ -49,10 +49,7 @@ void setup() {
 
   
   
-  println(honda.carX);
-  println(honda.carY);
-  println(honda.carSize);
-  println(honda.carSpeed);
+ 
 
 
 
