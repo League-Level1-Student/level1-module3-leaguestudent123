@@ -47,8 +47,6 @@ class Car {
 void setup() {
 
 
-  
-  
  
 
 
@@ -65,7 +63,12 @@ void draw() {
 
  
   
-  
+  if(frogy>width){
+    
+      background(0);
+  text("You Win", 240, 250);
+    
+  }
  
   honda.display();
   honda.moveleft();

@@ -81,7 +81,7 @@ else{
 void keyPressed(){
   
   if(key == ' '){
-    birdYVelocity= - 15;
+    birdYVelocity= - 10;
     
   }
   if(key=='r'){
