@@ -30,7 +30,7 @@ class Car {
     }
   } 
   
-  
+   
    
   void moveright(){
    carX+=carSpeed; 
@@ -63,10 +63,9 @@ void draw() {
 
  
   
-  if(frogy>width){
-    
-      background(0);
-  text("You Win", 240, 250);
+  if(frogy>450){
+    background(0);
+     text("you WIN", 230,250);
     
   }
  
@@ -82,7 +81,7 @@ carz.moveleft();
 
 lambo.display();
 lambo.moveright();
-if(intersects(honda) || intersects(newcar) || intersects(carz) || intersects(lambo)){
+if(intersects(honda) || intersects(newcar) || intersects(carz) || intersects(lambo)) {
   frogx=100;
 frogy=100;
 }
