@@ -1,6 +1,10 @@
 int frogx=100;
 int frogy=100;
-
+boolean game=true;
+ PImage back;
+ PImage carLeft;
+ PImage carRight;
+ PImage frog;
 class Car {
   int carX;
   int carY;
@@ -51,24 +55,37 @@ void setup() {
 
 
 
-  size(500, 500);
+size(844,600);
+        back = loadImage("froggerBackground.png");
+        carLeft = loadImage("carLeft.png");
+        carLeft.resize(160,100);
+        carRight = loadImage("carRight.png");
+        carRight.resize(160,100);
+        frog = loadImage("frog.png");
+        frog.resize(75,75);
   
 }
 void draw() {
 
-  background(#0046FF);
+  background(back);
+        image (carLeft,250,360);
+        image (carRight,250, 210);
+        image (frog, 300, 530);
 
   fill(#00FF1B);
   ellipse(frogx, frogy, 20, 20);
 
  
   
-  if(frogy>450){
+  if(frogy>570){
+
+    
     background(0);
      text("you WIN", 230,250);
-    
+    game=false;
   }
  
+ if(game==true){
   honda.display();
   honda.moveleft();
   
@@ -81,6 +98,8 @@ carz.moveleft();
 
 lambo.display();
 lambo.moveright();
+
+ }
 if(intersects(honda) || intersects(newcar) || intersects(carz) || intersects(lambo)) {
   frogx=100;
 frogy=100;
@@ -120,6 +139,13 @@ void keyPressed() {
 
       frogx=0;
     }
+  }
+  else if(key == 'r'){
+    
+    game=true;
+    frogy=100;
+    
+    
   }
 }
 boolean intersects(Car car) {
